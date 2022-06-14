@@ -11,9 +11,7 @@ noSwapCar = 0
 
 initialTime = time.perf_counter()
 while (finalTime-initialTime < 60):
-    doorList = ["g", "g", "g"]
     doorChoice = random.randint(0,2)
-    doorList[doorChoice] = "c"
     x=0
     while x > 1:
         firstChoice = random.randint(0,2)
