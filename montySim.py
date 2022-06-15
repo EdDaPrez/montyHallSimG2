@@ -1,33 +1,31 @@
-print("Monte Hall Simulation \n")
+print("Monty Hall Simulation \n")
 print("You are a participant in a gameshow and are presented with 3 doors by the host.\nBehind one door, there is a brand new car. But")
 
 import time
 import random
 
-counter = 0 #counts the amount of processes
-finalTime = 0
-swapCar = 0
-noSwapCar = 0
+counter = 0 #keeps count of the iteration of the loop
+finalTime = 0 #time that loop uses to determine whether to terminate or not
+swapDoor = 0 #keeps count of the amount of cars earned after swapping doors
+noSwapDoor = 0 #keeps count of the amount of cars earned without swapping doors
+secondChoice = 0 #global variable created to be referenced within the loop
 
 initialTime = time.perf_counter()
-while (finalTime-initialTime < 60):
-    doorChoice = random.randint(0,2)
-    x=0
-    while x > 1:
-        firstChoice = random.randint(0,2)
-        if firstChoice != doorChoice:
-            x = 1
-    secondChoice = random.randint(0,2)
-    while x > 2:
-        secondChoice = random.randint(0,2)
-        if secondChoice != firstChoice:
-            x = 2
-    if (secondChoice != doorChoice):
-        swapCar = swapCar + 1
+while (finalTime-initialTime < 5):
+    doorList = [0,1,2]
+    carChoice = random.randint(0,2)
+    doorList.remove(carChoice)
+    userChoice = random.randint(0,2)
+    if userChoice != carChoice:
+        doorList.remove(userChoice)
+    firstChoice = random.choice(doorList)
+    secondChoice = random.randint(0,1)#0 is to swap, 1 is not to swap
+    if userChoice != carChoice:
+        swapDoor = swapDoor + 1
     else:
-        noSwapCar = noSwapCar + 1
+        noSwapDoor = noSwapDoor + 1
     counter = counter + 1
     finalTime = time.perf_counter()
 print(str(counter) + " total iterations")
-print(str(swapCar) + " cars earned after swapping doors")
-print(str(noSwapCar) + " cars earned without swapping doors")
+print(str(swapDoor) + " cars could be earned after swapping doors")
+print(str(noSwapDoor) + " cars could be earned without swapping doors")
