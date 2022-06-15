@@ -9,9 +9,14 @@ finalTime = 0 #time that loop uses to determine whether to terminate or not
 swapDoor = 0 #keeps count of the amount of cars earned after swapping doors
 noSwapDoor = 0 #keeps count of the amount of cars earned without swapping doors
 secondChoice = 0 #global variable created to be referenced within the loop
+doorList = 0
+carChoice = 0
+userChoice = 0
+firstChoice = 0
+secondChoice = 0
 
 initialTime = time.perf_counter()
-while (finalTime-initialTime < 60):
+while (finalTime-initialTime < 5):
     doorList = [0,1,2]
     carChoice = random.randint(0,2)
     doorList.remove(carChoice)
@@ -30,4 +35,4 @@ print(str(totalCounter) + " total iterations")
 print(str(swapDoor) + " cars could be earned after swapping doors")
 print(str(noSwapDoor) + " cars could be earned without swapping doors")
 
-print("This means that if you decide to swap doors, you have a " + str((swapDoor/totalCounter)*100) + "% chance of getting a car./n Meanwhile, when choosing to not switch doors, you have a " + str((noSwapDoor/totalCounter)*100) + "% chance of getting a car.")
+print("This means that if you decide to swap doors, you have a " + str((swapDoor/totalCounter)*100) + "% chance of getting a car.\n Meanwhile, when choosing to not switch doors, you have a " + str((noSwapDoor/totalCounter)*100) + "% chance of getting a car.")
