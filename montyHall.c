@@ -13,7 +13,7 @@ int main() {
     printf("Monty Hall\n\nWait 60 seconds...\n\n");
     srand(time(0));//randomizes results based on current time
     time_t initialTime = time(NULL);//takes note of exact time loop started
-    while((time(NULL) - initialTime) < 5) {//stops loop at 60 sec
+    while((time(NULL) - initialTime) < 60) {//stops loop at 60 sec
         userInitialChoice = (rand() % (3));//random int betw 0-2
         if (carDoor != userInitialChoice){
             swapDoor++; //tracks wins when swapping
