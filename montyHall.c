@@ -22,6 +22,7 @@ int main() {
         }
     }
     long long int dataPoints = abs(swapDoor) + abs(noSwapDoor);
+    //the following just displays program results
     printf("%d datapoints\n", (dataPoints));
     printf("%d cars won when door swapped\n", abs(swapDoor));
     printf("%d cars won when door not swapped", abs(noSwapDoor));
